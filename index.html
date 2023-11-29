@@ -2,25 +2,24 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<html>
+<html lang="fr">
 <head>
     <title>StudyInBG</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="./../front/assets/css/main.css"/>
     <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css"/>
+        <link rel="stylesheet" href="./../front/assets/css/noscript.css"/>
     </noscript>
 </head>
 <body class="is-preload">
 
 <!-- Wrapper -->
 <div id="wrapper">
-
     <!-- Header -->
     <header id="header">
         <div class="logo">
-            <span class="logoant"><img src="https://ff.tu-sofia.bg/sites/default/files/logo-ff_0.png"></span>
+            <span class="logoant"><img src="./../front/images/ff-tu.png"></span>
         </div>
         <div class="content">
             <div class="inner">
@@ -38,9 +37,8 @@
             </div>
         </div>
         <nav>
-            <ul>
-                <!-- <li><a href="#intro">Intro</a></li> -->
-                <li><a href="#contact">Contact</a></li>
+            <ul id="sectionList">
+                <li><a data-rubriqueid=0 href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -49,27 +47,16 @@
     <div id="main">
 
         <!-- article exemple
-            <article id="intro">
-                <h2 class="major">Intro</h2>
-                    <span class="image main"><img src="images/intro.jpg" alt="" /></span>
-                    <p>Salut à toi ami des fourmis (du moins je l'espère) ! Je suis Mr Wells, le chercheur qui va t'accompagner tout au long de cette aventure. J'espère au travers de ce web-doc te faire découvrir de nouvelles choses sur les fourmis car vois-tu, ces dernières sont bien plus proches de nous qu'on ne le pense. Je te laisse avec notre petite introduction où nous sommes allés interviewer des étudiants en Biologie à Paul Sabatier pour une entrée en douceur dans la fourmilière. </br>
-                    Ceux qui s'imaginent que la Terre appartient seulement aux hommes et bien vous allez être surpris ! L'homme a beau avoir conquis toute la surface terrestre du globe, il vout suffit de soulever une pierre ou bien de creuser un peu pour s'appercevoir que le sous-sol lui est complètement colonisé par les fourmis. Elles sont comme nous, elles vivent en société. Mais qu'est ce que nos étudiants on a dire là dessus ?</p>
-                <h3 class="minor">Qu'est ce qui vous fascine le plus chez les fourmis ?</h3>
-                    <video id="rightvid" controls src="assets/video/Séquence 01.mp4"></video>
-                    <blockquote>(Sami) Déjà l’organisation d’une colonie de fourmis est fascinante en elle même surtout qu’il en existe autant qu’il existe d’espèces différentes.</br>
-                    (Thomas) Les fourmis, à l’instar des abeilles, montrent à quel point le monde des insectes peut être fascinant, et nous fait prendre conscience du fait que nous ne formons pas une exception complète dans le monde animal.
-                    </blockquote>
-                <h3 class="minor">Selon vous, les fourmis forment-elles une société ?</h3>
-                    <video id="rightvid" controls src="assets/video/Séquence 02.mp4"></video>
-                    <blockquote>Chaque morphologie est adaptée au rôle que joue la fourmi dans la colonie. Le rôle de chaque individu est déterminé avant leur naissance. </br>
-                    La division du travail et la structure de la colonie ainsi que les différences morphologiques liées à chaque poste font que les colonies de fourmis portent le nom de société.
-                    </blockquote>
-                <h3 class="minor">Pouvez-vous nous donner des arguments de comparaison entre fourmis et humains ?</h3>
-                    <video id="rightvid" controls src="assets/video/Séquence 03.mp4"></video>
-                    <blockquote>La division du travail chez les fourmis et la hiérarchie qui existe au sein de la colonie sont similaires à la société humaine. Cependant il existe des différences fondamentales, d’une part le poste de chaque fourmi est choisi à la naissance, et de plus il n’y a pas de recherche du profit individuel par les au sein de la colonie contrairement à la société humaine : par exemple si une fourmi est malade elle va être expulsée par les autres de la colonie.
-                    </blockquote>
-                    <p>Nous voilà déjà bien parti ! Tu te sens perdu ? Je n'espère pas, parce que l'on va s'enfoncer plus loin encore dans la fourmilière avec les chapitres suivants, ce n'était que la surface. Les fourmis sont proches des hommes sur pleins de plans différents, et nous allons en voir trois différents : la société, les constructions et la guerre. Dis-toi qu'il existe dans le monde plus de 12.000 espèces différentes de fourmis. Alors oui, nous ne serons pas exhaustifs comme tu peux t'en douter. Mais après tout, n'existe-t-il pas tout autant de civilisations bien différentes chez nous les hommes ?</p>
-            </article>
+        <article id="rubrique name">
+            <h2 class="major">Intro</h2>
+            <span class="image main"><img src="images/intro.jpg" alt=""/></span>
+            <p>rubrique description</p>
+            <h3 class="minor">element name</h3>
+            <video id="rightvid" controls src="assets/video/Séquence 01.mp4"></video>
+            <blockquote>
+                element description
+            </blockquote>
+        </article>
         -->
 
         <!-- Contact -->
@@ -166,11 +153,12 @@
 <div id="bg"></div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="./../front/assets/js/jquery.min.js"></script>
+<script src="./../front/assets/js/browser.min.js"></script>
+<script src="./../front/assets/js/breakpoints.min.js"></script>
+<script src="./../front/assets/js/util.js"></script>
+<script src="./../front/assets/js/main.js"></script>
+<script src="./../index.js"></script>
 
 </body>
 </html>
