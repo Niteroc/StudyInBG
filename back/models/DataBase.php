@@ -2,7 +2,6 @@
 
 namespace back\models;
 use PDO;
-use PDOException;
 
 class DataBase
 {
