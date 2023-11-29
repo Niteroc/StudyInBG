@@ -65,8 +65,6 @@ $.ajax({
                             p.innerText = element.description;
                         }
                         div.appendChild(p);
-                        console.log(index)
-                        console.log(array.length)
 
                         if (index !== (array.length - 1)) {
                             let hr = document.createElement("hr");

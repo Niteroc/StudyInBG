@@ -109,7 +109,29 @@
                             }
 
                             window.onload = function () {
-                                sortSelect("activity");
+                                $.ajax({
+                                    type: "GET",
+                                    dataType: 'JSON',
+                                    url: "router.php?api=rubrique",
+                                    success: function (data_rubrique) {
+
+                                        let activity = document.getElementById("activity");
+
+                                        data_rubrique.forEach(rubrique => {
+                                            let option = document.createElement("option");
+                                            option.value = rubrique.nom;
+                                            option.innerText = rubrique.nom;
+                                            activity.appendChild(option);
+                                        });
+
+                                        let option = document.createElement("option");
+                                        option.value = "Autre";
+                                        option.innerText = "Autre";
+                                        activity.appendChild(option);
+
+                                        sortSelect("activity");
+                                    }
+                                });
                             };
                         </script>
                     </div>
