@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<html>
+<head>
+    <title>TITRE SITE</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <span class="logoant"><img src="https://ff.tu-sofia.bg/sites/default/files/logo-ff_0.png"></span>
+            <!--<span class="icon fa-diamond"></span>-->
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>Vivre en Bulgarie : Votre Compagnon Essentiel</h1>
+                <p>
+                    Plongez dans votre aventure Erasmus en Bulgarie !
+                    <br><br>
+                    Notre site est votre guide pour chaque étape de cette expérience unique. De la recherche de logement
+                    aux activités incontournables, en passant par les astuces pour vos courses et les transports,
+                    découvrez tout ce dont vous avez besoin pour vous sentir chez vous.
+                    Les professionnels locaux peuvent partager leurs services via notre espace dédié.
+                    <br><br>
+                    Bienvenue dans cette nouvelle aventure !
+                </p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <!-- <li><a href="#intro">Intro</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- article exemple
+            <article id="intro">
+                <h2 class="major">Intro</h2>
+                    <span class="image main"><img src="images/intro.jpg" alt="" /></span>
+                    <p>Salut à toi ami des fourmis (du moins je l'espère) ! Je suis Mr Wells, le chercheur qui va t'accompagner tout au long de cette aventure. J'espère au travers de ce web-doc te faire découvrir de nouvelles choses sur les fourmis car vois-tu, ces dernières sont bien plus proches de nous qu'on ne le pense. Je te laisse avec notre petite introduction où nous sommes allés interviewer des étudiants en Biologie à Paul Sabatier pour une entrée en douceur dans la fourmilière. </br>
+                    Ceux qui s'imaginent que la Terre appartient seulement aux hommes et bien vous allez être surpris ! L'homme a beau avoir conquis toute la surface terrestre du globe, il vout suffit de soulever une pierre ou bien de creuser un peu pour s'appercevoir que le sous-sol lui est complètement colonisé par les fourmis. Elles sont comme nous, elles vivent en société. Mais qu'est ce que nos étudiants on a dire là dessus ?</p>
+                <h3 class="minor">Qu'est ce qui vous fascine le plus chez les fourmis ?</h3>
+                    <video id="rightvid" controls src="assets/video/Séquence 01.mp4"></video>
+                    <blockquote>(Sami) Déjà l’organisation d’une colonie de fourmis est fascinante en elle même surtout qu’il en existe autant qu’il existe d’espèces différentes.</br>
+                    (Thomas) Les fourmis, à l’instar des abeilles, montrent à quel point le monde des insectes peut être fascinant, et nous fait prendre conscience du fait que nous ne formons pas une exception complète dans le monde animal.
+                    </blockquote>
+                <h3 class="minor">Selon vous, les fourmis forment-elles une société ?</h3>
+                    <video id="rightvid" controls src="assets/video/Séquence 02.mp4"></video>
+                    <blockquote>Chaque morphologie est adaptée au rôle que joue la fourmi dans la colonie. Le rôle de chaque individu est déterminé avant leur naissance. </br>
+                    La division du travail et la structure de la colonie ainsi que les différences morphologiques liées à chaque poste font que les colonies de fourmis portent le nom de société.
+                    </blockquote>
+                <h3 class="minor">Pouvez-vous nous donner des arguments de comparaison entre fourmis et humains ?</h3>
+                    <video id="rightvid" controls src="assets/video/Séquence 03.mp4"></video>
+                    <blockquote>La division du travail chez les fourmis et la hiérarchie qui existe au sein de la colonie sont similaires à la société humaine. Cependant il existe des différences fondamentales, d’une part le poste de chaque fourmi est choisi à la naissance, et de plus il n’y a pas de recherche du profit individuel par les au sein de la colonie contrairement à la société humaine : par exemple si une fourmi est malade elle va être expulsée par les autres de la colonie.
+                    </blockquote>
+                    <p>Nous voilà déjà bien parti ! Tu te sens perdu ? Je n'espère pas, parce que l'on va s'enfoncer plus loin encore dans la fourmilière avec les chapitres suivants, ce n'était que la surface. Les fourmis sont proches des hommes sur pleins de plans différents, et nous allons en voir trois différents : la société, les constructions et la guerre. Dis-toi qu'il existe dans le monde plus de 12.000 espèces différentes de fourmis. Alors oui, nous ne serons pas exhaustifs comme tu peux t'en douter. Mais après tout, n'existe-t-il pas tout autant de civilisations bien différentes chez nous les hommes ?</p>
+            </article>
+        -->
+
+        <!-- Contact -->
+        <article id="contact">
+            <h2 class="major">Contact</h2>
+            <form id="contactForm">
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Nom</label>
+                        <input type="text" name="name" id="name" required/>
+                    </div>
+                    <div class="field">
+                        <label for="activity">Activité</label>
+                        <select name="activity" id="activity" required onchange="checkOther(this);">
+                            <option value="">Choisissez une activité</option>
+                        </select>
+
+                        <div id="otherActivity" style="display: none;">
+                            <label for="otherActivityInput"><br>Précisez votre activité</label>
+                            <input type="text" name="otherActivityInput" id="otherActivityInput"/>
+                        </div>
+
+                        <script>
+                            function sortSelect(selectId) {
+                                var selectElement = document.getElementById(selectId);
+                                var options = selectElement.getElementsByTagName("option");
+                                var arr = Array.from(options).slice(1); // Ignorer la première option (vide)
+                                arr.sort(function (a, b) {
+                                    return a.text.localeCompare(b.text);
+                                });
+                                for (var i = 0; i < arr.length; i++) {
+                                    selectElement.add(arr[i], null);
+                                }
+                                var optionToMove = selectElement.querySelector("option[value='Autre']");
+                                selectElement.appendChild(optionToMove);
+                            }
+
+                            function checkOther() {
+                                var select = document.getElementById("activity");
+                                var otherActivityInput = document.getElementById("otherActivityInput");
+                                var otherActivityDiv = document.getElementById("otherActivity");
+
+                                if (select.value === "Autre") {
+                                    otherActivityDiv.style.display = "block";
+                                    otherActivityInput.setAttribute("required", "required");
+                                } else {
+                                    otherActivityDiv.style.display = "none";
+                                    otherActivityInput.removeAttribute("required");
+                                }
+                            }
+
+                            window.onload = function () {
+                                sortSelect("activity");
+                            };
+                        </script>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="4" required></textarea>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Envoyer" class="primary"/></li>
+                    <li><input type="reset" value="Effacer"/></li>
+                </ul>
+            </form>
+            <p id="successMessage" style="display: none; color: #0bc90b; text-align: center">Votre message a été envoyé
+                avec succès !</p>
+        </article>
+
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // Empêcher le rafraîchissement de la page
+
+                // Affichage du message de succès
+                document.getElementById("successMessage").style.display = "block";
+
+                // Rafraîchir la page après 5 secondes
+                setTimeout(function () {
+                    window.location.href = "";
+                }, 1000); // Délai en millisecondes (5 secondes)
+            });
+        </script>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">&copy; Tous droits réservés - 11/2023</p>
+    </footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

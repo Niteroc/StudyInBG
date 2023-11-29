@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="archiprojet">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/antsv2/archiprojet.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
