@@ -139,6 +139,18 @@
                         <label for="message">Message</label>
                         <textarea name="message" id="message" rows="4" required></textarea>
                     </div>
+                    <div class="field">
+                        <label for="price">Prix (entre 1 et 5) - facultatif</label>
+                        <input style="color: black" type="number" name="price" id="price" min="1" max="5"/>
+                    </div>
+                    <div class="field">
+                        <label for="address">Adresse</label>
+                        <input type="text" name="address" id="address" required/>
+                    </div>
+                    <div class="field">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" id="image" accept="image/*"/>
+                    </div>
                 </div>
                 <ul class="actions">
                     <li><input type="submit" value="Envoyer" class="primary"/></li>
@@ -153,13 +165,19 @@
             document.getElementById("contactForm").addEventListener("submit", function (event) {
                 event.preventDefault(); // Empêcher le rafraîchissement de la page
 
+                fetch("router.php?api=create", {
+                    method: "POST", headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                }).then(res => res.text()).then(res => console.log(res));
+
                 // Affichage du message de succès
                 document.getElementById("successMessage").style.display = "block";
 
                 // Rafraîchir la page après 5 secondes
-                setTimeout(function () {
-                    window.location.href = "";
-                }, 1000); // Délai en millisecondes (5 secondes)
+                /*                setTimeout(function () {
+                                    window.location.href = "";
+                                }, 2000);*/ // Délai en millisecondes (5 secondes)
             });
         </script>
     </div>

@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `element` (
   `nom` varchar(255) NOT NULL,
   `prix` tinyint DEFAULT NULL,
   `description` text NOT NULL,
+  `adresse` text NOT NULL,
   `image` longblob,
   PRIMARY KEY (`id`),
   KEY `idrubrique` (`idrubrique`)

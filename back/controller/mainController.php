@@ -14,7 +14,7 @@ function getAllRubrique()
 
     $rubrique = new Rubrique();
 
-    $rubrique_result = $rubrique->findAll();
+    $rubrique_result = $rubrique->findAllNotEmpty();
 
     echo json_encode($rubrique_result);
 }
@@ -30,4 +30,10 @@ function getAllElementById($id)
         $element_result[$i]['image'] = base64_encode($element_result[$i]['image']);
     }
     echo json_encode($element_result);
+}
+
+function createPropositionElement()
+{
+    $element = new Element();
+    $element->createPropositionElement("Cookie", "ola", "2", "desc", "5 rue qqc");
 }

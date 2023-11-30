@@ -12,6 +12,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'
         case 'element':
             getAllElementById($_GET['id']);
             break;
+        case 'create':
+            if($_SERVER["REQUEST_METHOD"] == "POST") {
+                createPropositionELement();
+            }
+            break;
         default:
             // Gérer d'autres cas d'API
             break;
