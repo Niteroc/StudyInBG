@@ -9,7 +9,7 @@ class DataBase
 
     function __construct()
     {
-        $this->conn = new PDO('mysql:host=localhost;dbname=studyinbg;charset=utf8', 'root', 'root'); //connection à la base de données
+        $this->conn = new PDO('mysql:host=localhost;dbname=studyinbg;charset=utf8', 'root', ''); //connection à la base de données
     }
 
     //exécution de la requête préparée (avec paramètres)

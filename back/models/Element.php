@@ -10,25 +10,37 @@ class Element extends DataBase
         return $this->requete("SELECT * from element where idrubrique = :id and valide = 1", array('id' => $id))->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function createPropositionElement($rubrique, $nom, $prix, $description, $adresse)
+    public function createPropositionElement($rubrique, $nom, $prix, $description, $adresse, $image)
     {
         // try to find the rubrique by name, if not find create one
         $rub = new Rubrique();
         $allRubriques = $rub->findAll();
 
-        $idrubrique = -1;
-
         $res = array_search($rubrique, array_column($allRubriques, 'nom'));
-        if ($res) {
-            $idrubrique = $res;
+
+        if ($res !== false) {
+            $idrubrique = $allRubriques[$res]['id'];
         } else {
             $rub->createRubrique($rubrique, "");
             $idrubrique = $rub->conn->lastInsertId();
         }
 
-        return $this->requete("INSERT INTO element (idrubrique, nom, prix, description, adresse, valide) 
-                                    VALUES (:idrubrique, :nom, :prix, :description, :adresse, :valide)",
-            array('idrubrique' => $idrubrique, 'nom' => $nom, 'prix' => $prix, 'description' => $description, 'adresse' => $adresse, 'valide' => 0)
+        // Obtenez le plus grand identifiant actuellement utilisé dans la table
+        $result = $this->requete("SELECT MAX(id) AS max_id FROM element", null)->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && isset($result['max_id'])) {
+            $maxId = $result['max_id'];
+
+            // Convertir maxId en entier
+            $maxIdPlusOne = (int)$maxId + 1;
+
+            $this->requete("ALTER TABLE element AUTO_INCREMENT = " . $maxIdPlusOne, null);
+        }
+
+        // Insérez les données avec le nouvel identifiant auto-incrémenté
+        return $this->requete("INSERT INTO element (idrubrique, nom, prix, description, adresse, image, valide) 
+                                    VALUES (:idrubrique, :nom, :prix, :description, :adresse, :image, :valide)",
+            array('idrubrique' => $idrubrique, 'nom' => $nom, 'prix' => $prix, 'description' => $description, 'adresse' => $adresse, 'image' => $image, 'valide' => 0)
         );
     }
 }

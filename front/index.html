@@ -13,6 +13,7 @@
     </noscript>
 </head>
 <body class="is-preload">
+<script src="./../front/assets/js/jquery.min.js"></script>
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -45,19 +46,6 @@
 
     <!-- Main -->
     <div id="main">
-
-        <!-- article exemple
-        <article id="rubrique name">
-            <h2 class="major">Intro</h2>
-            <span class="image main"><img src="images/intro.jpg" alt=""/></span>
-            <p>rubrique description</p>
-            <h3 class="minor">element name</h3>
-            <video id="rightvid" controls src="assets/video/Séquence 01.mp4"></video>
-            <blockquote>
-                element description
-            </blockquote>
-        </article>
-        -->
 
         <!-- Contact -->
         <article id="Contact">
@@ -112,7 +100,7 @@
                                 $.ajax({
                                     type: "GET",
                                     dataType: 'JSON',
-                                    url: "router.php?api=rubrique",
+                                    url: "router.php?api=rubriqueall",
                                     success: function (data_rubrique) {
 
                                         let activity = document.getElementById("activity");
@@ -149,7 +137,7 @@
                     </div>
                     <div class="field">
                         <label for="image">Image</label>
-                        <input type="file" name="image" id="image" accept="image/*"/>
+                        <input type="file" name="image" id="image" accept="image/*" required/>
                     </div>
                 </div>
                 <ul class="actions">
@@ -162,29 +150,37 @@
         </article>
 
         <script>
-            document.getElementById("contactForm").addEventListener("submit", function (event) {
-                event.preventDefault(); // Empêcher le rafraîchissement de la page
+            $("#contactForm").submit(function (event) {
+                event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
 
-                fetch("router.php?api=create", {
-                    method: "POST", headers: {
-                        "X-Requested-With": "XMLHttpRequest"
+                // Récupérer les données du formulaire
+                const formData = new FormData(this);
+
+                $.ajax({
+                    type: "POST",
+                    url: "router.php?api=create",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function () {
+                        // Affichage du message de succès
+                        document.getElementById("successMessage").style.display = "block";
+
+                        setTimeout(function () {
+                            //window.location.href = "";
+                        }, 2000); // Délai en millisecondes (2 secondes)
+                    },
+                    error: function (error) {
+                        console.error(error); // Gérez les erreurs si nécessaire
                     }
-                }).then(res => res.text()).then(res => console.log(res));
-
-                // Affichage du message de succès
-                document.getElementById("successMessage").style.display = "block";
-
-                // Rafraîchir la page après 5 secondes
-                /*                setTimeout(function () {
-                                    window.location.href = "";
-                                }, 2000);*/ // Délai en millisecondes (5 secondes)
+                });
             });
         </script>
     </div>
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Tous droits réservés - 11/2023</p>
+        <p class="copyright">&copy; Tous droits réservés - 12/2023</p>
     </footer>
 
 </div>
@@ -193,7 +189,6 @@
 <div id="bg"></div>
 
 <!-- Scripts -->
-<script src="./../front/assets/js/jquery.min.js"></script>
 <script src="./../front/index.js"></script>
 <script src="./../front/assets/js/browser.min.js"></script>
 <script src="./../front/assets/js/breakpoints.min.js"></script>

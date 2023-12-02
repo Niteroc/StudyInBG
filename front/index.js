@@ -1,5 +1,5 @@
 $.ajax({
-    type: "GET", dataType: 'JSON', url: "router.php?api=rubrique", success: function (data_rubrique) {
+    type: "GET", dataType: 'JSON', url: "router.php?api=rubriquenotempty", success: function (data_rubrique) {
 
         // Sélection de l'élément ul
         let sectionList = document.getElementById("sectionList");

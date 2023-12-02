@@ -17,8 +17,22 @@ class Rubrique extends DataBase
     }
 
     public function createRubrique($nom, $description) {
+
+        // Obtenez le plus grand identifiant actuellement utilisé dans la table
+        $result = $this->requete("SELECT MAX(id) AS max_id FROM rubrique", null)->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && isset($result['max_id'])) {
+            $maxId = $result['max_id'];
+
+            // Convertir maxId en entier
+            $maxIdPlusOne = (int)$maxId + 1;
+
+            $this->requete("ALTER TABLE rubrique AUTO_INCREMENT = " . $maxIdPlusOne, null);
+        }
+
+        // Insérez les données avec le nouvel identifiant auto-incrémenté
         return $this->requete("INSERT INTO rubrique (nom, description) VALUES(:nom, :description)",
-                                    array('nom' => $nom, 'description' => $description)
+            array('nom' => $nom, 'description' => $description)
         );
     }
 }

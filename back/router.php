@@ -6,15 +6,19 @@ $requestedUrl = $_SERVER['REQUEST_URI'];
 
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
     switch ($_GET['api']) {
-        case 'rubrique':
+        case 'rubriqueall':
             getAllRubrique();
+            break;
+        case 'rubriquenotempty':
+            getAllRubriqueNotEmpty();
             break;
         case 'element':
             getAllElementById($_GET['id']);
             break;
         case 'create':
+            createPropositionElement();
+
             if($_SERVER["REQUEST_METHOD"] == "POST") {
-                createPropositionELement();
             }
             break;
         default:
