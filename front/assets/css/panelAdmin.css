@@ -1,0 +1,28 @@
+#suppr {
+    float: right;
+    margin-right: 2%;;
+}
+
+.img_wine {
+    max-width: 500px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+#all_content{
+    min-height: 85%;
+}
+
+td label {
+    display:block;
+    width:100%;
+}
+
+#tableForm{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 25vw;
+    margin-left: 25vw;
+}

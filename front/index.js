@@ -1,5 +1,5 @@
 $.ajax({
-    type: "GET", dataType: 'JSON', url: "router.php?api=rubriquenotempty", success: function (data_rubrique) {
+    type: "GET", dataType: 'JSON', url: "index.php?api=rubriquenotempty", success: function (data_rubrique) {
 
         // Sélection de l'élément ul
         let sectionList = document.getElementById("sectionList");
@@ -34,7 +34,7 @@ $.ajax({
             $.ajax({
                 type: "GET",
                 dataType: 'JSON',
-                url: "router.php?api=element&id=" + rubrique.id,
+                url: "index.php?api=element&id=" + rubrique.id,
                 success: function (data_element) {
 
                     data_element.forEach((element, index, array) => {
@@ -73,8 +73,8 @@ $.ajax({
 
                         article.appendChild(div);
 
-                        loadJS('./../front/assets/js/util.js');
-                        loadJS('./../front/assets/js/main.js');
+                        loadJS('front/assets/js/util.js');
+                        loadJS('front/assets/js/main.js');
                     });
                 },
                 error: function (data) {

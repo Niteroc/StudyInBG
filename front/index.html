@@ -7,20 +7,20 @@
     <title>StudyInBG</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="./../front/assets/css/main.css"/>
+    <link rel="stylesheet" href="front/assets/css/main.css"/>
     <noscript>
-        <link rel="stylesheet" href="./../front/assets/css/noscript.css"/>
+        <link rel="stylesheet" href="front/assets/css/noscript.css"/>
     </noscript>
 </head>
 <body class="is-preload">
-<script src="./../front/assets/js/jquery.min.js"></script>
+<script src="front/assets/js/jquery.min.js"></script>
 
 <!-- Wrapper -->
 <div id="wrapper">
     <!-- Header -->
     <header id="header">
         <div class="logo">
-            <span class="logoant"><img src="./../front/images/ff-tu.png"></span>
+            <span class="logoant"><img src="front/images/ff-tu.png"></span>
         </div>
         <div class="content">
             <div class="inner">
@@ -100,7 +100,7 @@
                                 $.ajax({
                                     type: "GET",
                                     dataType: 'JSON',
-                                    url: "router.php?api=rubriqueall",
+                                    url: "index.php?api=rubriqueall",
                                     success: function (data_rubrique) {
 
                                         let activity = document.getElementById("activity");
@@ -180,7 +180,8 @@
 
     <!-- Footer -->
     <footer id="footer">
-        <p class="copyright">&copy; Tous droits réservés - 12/2023</p>
+        <p class="copyright">&copy; Tous droits réservés - 12/2023 - <a href="index.php?page=admin">Administration</a>
+        </p>
     </footer>
 
 </div>
@@ -189,11 +190,11 @@
 <div id="bg"></div>
 
 <!-- Scripts -->
-<script src="./../front/index.js"></script>
-<script src="./../front/assets/js/browser.min.js"></script>
-<script src="./../front/assets/js/breakpoints.min.js"></script>
-<script src="./../front/assets/js/util.js"></script>
-<script src="./../front/assets/js/main.js"></script>
+<script src="front/assets/js/browser.min.js"></script>
+<script src="front/assets/js/breakpoints.min.js"></script>
+<script src="front/assets/js/util.js"></script>
+<script src="front/assets/js/main.js"></script>
+<script src="front/index.js"></script>
 
 </body>
 </html>

@@ -35,4 +35,10 @@ class Rubrique extends DataBase
             array('nom' => $nom, 'description' => $description)
         );
     }
+
+    // On supprime une rubrique selon son id
+    public function delete($id)
+    {
+        return $this->requete("DELETE FROM rubrique WHERE id = :id", array("id" => $id));
+    }
 }

@@ -4,6 +4,12 @@ use back\models\DataBase;
 
 class Element extends DataBase
 {
+
+    public function findAll()
+    {
+        return $this->requete("SELECT * from element", null)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // On retourne un tableau de toutes les rubriques
     public function findAllByRubriqueId($id)
     {
@@ -42,5 +48,23 @@ class Element extends DataBase
                                     VALUES (:idrubrique, :nom, :prix, :description, :adresse, :image, :valide)",
             array('idrubrique' => $idrubrique, 'nom' => $nom, 'prix' => $prix, 'description' => $description, 'adresse' => $adresse, 'image' => $image, 'valide' => 0)
         );
+    }
+
+    // On supprime un élément selon son id
+    public function delete($id)
+    {
+        return $this->requete("DELETE FROM element WHERE id = :id", array("id" => $id));
+    }
+
+    // On valide un élément selon son id
+    public function valid($id)
+    {
+        return $this->requete("UPDATE element SET valide = 1 WHERE id = :id", array("id" => $id));
+    }
+
+    // On invalide un élément selon son id
+    public function invalid($id)
+    {
+        return $this->requete("UPDATE element SET valide = 0 WHERE id = :id", array("id" => $id));
     }
 }

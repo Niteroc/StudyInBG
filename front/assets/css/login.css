@@ -1,0 +1,13 @@
+#content {
+    text-align: center;
+}
+
+#login{
+    text-align: -webkit-center;
+}
+
+#login input[type="text"],
+#login input[type="password"]{
+    text-align: -webkit-center;
+    width: 50%;
+}
