@@ -129,7 +129,6 @@ function createPropositionElement()
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $activity = isset($_POST['otherActivityInput']) && $_POST['otherActivityInput'] != "" ? $_POST['otherActivityInput'] : $_POST['activity'];
     $message = isset($_POST['message']) ? $_POST['message'] : '';
-    $price = isset($_POST['price']) ? $_POST['price'] : '';
     $address = isset($_POST['address']) ? $_POST['address'] : '';
 
     // Pour le champ de type fichier (input file)
@@ -142,5 +141,5 @@ function createPropositionElement()
     $imageData = $filePath !== '' ? file_get_contents($filePath) : '';
 
     $element = new Element();
-    $element->createPropositionElement($activity, $name, $price, $message, $address, $imageData);
+    $element->createPropositionElement($activity, $name, $message, $address, $imageData);
 }

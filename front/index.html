@@ -128,10 +128,6 @@
                         <textarea name="message" id="message" rows="4" required></textarea>
                     </div>
                     <div class="field">
-                        <label for="price">Prix (entre 1 et 5) - facultatif</label>
-                        <input style="color: black" type="number" name="price" id="price" min="1" max="5"/>
-                    </div>
-                    <div class="field">
                         <label for="address">Adresse</label>
                         <input type="text" name="address" id="address" required/>
                     </div>
@@ -158,16 +154,15 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "router.php?api=create",
+                    url: "index.php?api=create",
                     data: formData,
                     processData: false,
                     contentType: false,
                     success: function () {
                         // Affichage du message de succès
                         document.getElementById("successMessage").style.display = "block";
-
                         setTimeout(function () {
-                            //window.location.href = "";
+                            window.location.href = "";
                         }, 2000); // Délai en millisecondes (2 secondes)
                     },
                     error: function (error) {

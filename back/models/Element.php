@@ -16,7 +16,7 @@ class Element extends DataBase
         return $this->requete("SELECT * from element where idrubrique = :id and valide = 1", array('id' => $id))->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function createPropositionElement($rubrique, $nom, $prix, $description, $adresse, $image)
+    public function createPropositionElement($rubrique, $nom, $description, $adresse, $image)
     {
         // try to find the rubrique by name, if not find create one
         $rub = new Rubrique();
@@ -44,9 +44,9 @@ class Element extends DataBase
         }
 
         // Insérez les données avec le nouvel identifiant auto-incrémenté
-        return $this->requete("INSERT INTO element (idrubrique, nom, prix, description, adresse, image, valide) 
-                                    VALUES (:idrubrique, :nom, :prix, :description, :adresse, :image, :valide)",
-            array('idrubrique' => $idrubrique, 'nom' => $nom, 'prix' => $prix, 'description' => $description, 'adresse' => $adresse, 'image' => $image, 'valide' => 0)
+        return $this->requete("INSERT INTO element (idrubrique, nom, description, adresse, image, valide) 
+                                    VALUES (:idrubrique, :nom, :description, :adresse, :image, :valide)",
+            array('idrubrique' => $idrubrique, 'nom' => $nom, 'description' => $description, 'adresse' => $adresse, 'image' => $image, 'valide' => 0)
         );
     }
 
